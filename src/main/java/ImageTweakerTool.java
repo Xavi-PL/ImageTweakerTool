@@ -28,7 +28,6 @@ public class ImageTweakerTool {
      * @param file The selected file from the JFileChooser
      */
     private static void transformImage(File file) {
-
         if (file != null){
             try {
                 String fileName = file.getName();
@@ -63,9 +62,11 @@ public class ImageTweakerTool {
      * @param fileName Name of the imported File
      */
     private static void exportImage(BufferedImage subImage, String fileName) {
-
         try {
-            File outputfile = new File("output/itt_" + fileName);
+            File outputFolder = new File("output");
+            if (!outputFolder.exists())
+                outputFolder.mkdir();
+            File outputfile = new File(outputFolder.getAbsolutePath() + "/itt_" + fileName);
             ImageIO.write(subImage, FilenameUtils.getExtension(outputfile.getAbsolutePath()), outputfile);
             System.out.println("[INFO] - Success! Exported to: ["+outputfile.getAbsolutePath() + "]");
         } catch (IOException e) {
