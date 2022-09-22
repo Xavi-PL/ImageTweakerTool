@@ -7,4 +7,3 @@ Simple tool to edit images. The user uses JFileChooser to choose the image, tran
 
 #### AFTER (256x256px, 1:1 ratio, 11,6KB):
 ![AFTER](https://i.imgur.com/aOK4jmR.jpg)
-# GradientLogoMaker
